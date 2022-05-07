@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.13.2/dist/style.min.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@6.7.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.13.2"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.13.2/dist/index.umd.min.js"></script><script>(r => {
+          setTimeout(r);
+        })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, root, jsonOptions) => {
+        const markmap = getMarkmap();
+        window.mm = markmap.Markmap.create('svg#mindmap', getOptions == null ? void 0 : getOptions(markmap, jsonOptions), root);
+      })(() => window.markmap,(markmap, jsonOptions) => markmap.deriveOptions(jsonOptions),{"type":"heading","depth":1,"payload":{"lines":[0,1]},"content":"smooth","children":[{"type":"heading","depth":2,"payload":{"lines":[1,2]},"content":"1","children":[{"type":"list_item","depth":4,"payload":{"lines":[2,3]},"content":"a"},{"type":"list_item","depth":4,"payload":{"lines":[3,4]},"content":"日本語"},{"type":"list_item","depth":4,"payload":{"lines":[4,5]},"content":"テスト"}]},{"type":"heading","depth":2,"payload":{"lines":[6,7]},"content":"2"},{"type":"heading","depth":2,"payload":{"lines":[7,8]},"content":"3"},{"type":"heading","depth":2,"payload":{"lines":[8,9]},"content":"4","children":[{"type":"heading","depth":3,"payload":{"lines":[9,10]},"content":"3","children":[{"type":"ordered_list","depth":4,"payload":{"lines":[10,12],"startIndex":1},"content":"","children":[{"type":"list_item","depth":5,"payload":{"lines":[10,11],"index":1},"content":"1. aaaaaaa"},{"type":"list_item","depth":5,"payload":{"lines":[11,12],"index":2},"content":"2. <del>aaaaaaaa</del>"}]},{"type":"bullet_list","depth":4,"payload":{"lines":[12,17]},"content":"","children":[{"type":"list_item","depth":5,"payload":{"lines":[12,13]},"content":"[ ] list1"},{"type":"list_item","depth":5,"payload":{"lines":[13,14]},"content":"[x] li<strong>st</strong>2"},{"type":"list_item","depth":5,"payload":{"lines":[14,15]},"content":"inline link <a href=\"http://qiita.com\">Qiita</a>"},{"type":"list_item","depth":5,"payload":{"lines":[15,16]},"content":"inline <code>$hoge = 1</code>"}]}]}]}]},null)</script>
+</body>
+</html>
